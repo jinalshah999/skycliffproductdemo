@@ -23,4 +23,7 @@ export class ProductdisplayComponent implements OnInit {
       function() {}
     );
   }
+  onSideBarClick(value){
+    console.log("from parent compoentn i.e. product display "+value)
+  }
 }
