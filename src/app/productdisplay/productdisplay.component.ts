@@ -9,6 +9,7 @@ import { ProductdataService } from "./productdata.service";
 })
 export class ProductdisplayComponent implements OnInit {
   arr: Product[] = [];
+  name:string="watch";
   constructor(private _data: ProductdataService) {}
 
   ngOnInit() {

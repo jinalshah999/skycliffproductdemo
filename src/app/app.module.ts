@@ -6,12 +6,14 @@ import { ProductdisplayComponent } from './productdisplay/productdisplay.compone
 import { MenuComponent } from './menu/menu.component';
 import { routing } from "./app.routing";
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductdisplayComponent,
     MenuComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
