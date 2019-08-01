@@ -24,7 +24,7 @@
       <input name="user_mobile_no" ngModel type="text" class="form-control" placeholder="Enter mobile no">
     </div>
     <div class="form-group">
-      <button type="submit" class="form-control btn btn-primary" >Save User</button>
+      <button [disabled]="!f.valid" type="submit" class="form-control btn btn-primary" >Save User</button>
     </div>
   </form>
 </div>

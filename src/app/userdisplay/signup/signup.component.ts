@@ -11,9 +11,9 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {}
   onUserSave(f) {
-    console.log(f);
-    // this._data.addUser(f.value).subscribe((data: any) => {
-    //   alert("record added");
-    // });
+    //console.log(f);
+    this._data.addUser(f.value).subscribe((data: any) => {
+      alert("record added");
+    });
   }
 }
