@@ -9,6 +9,7 @@ import { routing } from "./app.routing";
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProductaddComponent } from './productdisplay/productadd/productadd.component';
+import { UserdisplayComponent } from './userdisplay/userdisplay.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { ProductaddComponent } from './productdisplay/productadd/productadd.comp
     MenuComponent,
     PagenotfoundComponent,
     SidebarComponent,
-    ProductaddComponent
+    ProductaddComponent,
+    UserdisplayComponent
   ],
   imports: [
     BrowserModule,

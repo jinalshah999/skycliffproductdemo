@@ -16,11 +16,12 @@ export class ProductaddComponent implements OnInit {
   }
   onSaveProduct(f){
 
-      this._data.addProduct(f.value).subscribe(
-        (data:any)=>{
-          console.log(data);
-        }
-      );
+    console.log(f);
+      // this._data.addProduct(f.value).subscribe(
+      //   (data:any)=>{
+      //     console.log(data);
+      //   }
+      // );
 
   }
 }
