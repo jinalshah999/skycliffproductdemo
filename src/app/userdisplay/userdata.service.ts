@@ -10,6 +10,9 @@ export class UserdataService {
   getAllUsers() {
     return this._http.get(this.url);
   }
+  getUserByEmail(user_email) {
+    return this._http.get(this.url+user_email);
+  }
   addUser(newuser) {
     let head = new HttpHeaders().set("Content-Type", "application/json");
     let body = JSON.stringify(newuser);

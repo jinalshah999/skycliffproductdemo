@@ -23,6 +23,11 @@ export class ProductdisplayComponent implements OnInit {
       function() {}
     );
   }
+  onProductDelete(item: Product) {
+    this._data.deleteProduct(item.pro_id).subscribe((data: any) => {
+      this.arr.splice(this.arr.indexOf(item), 1);
+    });
+  }
   onSideBarClick(value) {
     if (value != "") {
       this.arr = this.arr.filter(x => x.pro_name.indexOf(value) != -1);

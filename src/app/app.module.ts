@@ -11,6 +11,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProductaddComponent } from './productdisplay/productadd/productadd.component';
 import { UserdisplayComponent } from './userdisplay/userdisplay.component';
 import { SignupComponent } from './userdisplay/signup/signup.component';
+import { EdituserComponent } from './userdisplay/edituser/edituser.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { SignupComponent } from './userdisplay/signup/signup.component';
     SidebarComponent,
     ProductaddComponent,
     UserdisplayComponent,
-    SignupComponent
+    SignupComponent,
+    EdituserComponent
   ],
   imports: [
     BrowserModule,

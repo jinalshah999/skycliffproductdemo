@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserdataService } from './userdata.service';
 import { User } from './user';
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-userdisplay',
   templateUrl: './userdisplay.component.html',
@@ -9,7 +9,7 @@ import { User } from './user';
 })
 export class UserdisplayComponent implements OnInit {
 arr:User[]=[];
-  constructor(private _data:UserdataService) { }
+  constructor(private _data:UserdataService,private _router:Router) { }
 
   ngOnInit() {
     this._data.getAllUsers().subscribe(
@@ -25,5 +25,8 @@ arr:User[]=[];
         alert('deleted');
       }
     );
+  }
+  onUserEdit(item:User){
+    this._router.navigate(['/edituser',item.user_email]);
   }
 }

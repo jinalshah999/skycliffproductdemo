@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col-md-3">
-    <app-sidebar [categoryName]="name" (jinal)="onSideBarClick($event)" ></app-sidebar>
+    <app-sidebar [categoryName]="name" (jinal)="onSideBarClick($event)"></app-sidebar>
 
   </div>
   <div class="col-md-9">
@@ -15,8 +15,9 @@
             <p>{{item.pro_qty}}</p>
             <p>{{item.pro_mfg}}</p>
             <p>{{item.pro_price | currency:'INR' }}</p>
-            <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
-                role="button">Button</a></p>
+            <p>
+              <a (click)="onProductDelete(item)" class="btn btn-primary" role="button">Delete</a>
+            </p>
           </div>
         </div>
       </div>
