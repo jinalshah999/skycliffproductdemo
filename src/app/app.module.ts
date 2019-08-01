@@ -10,6 +10,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProductaddComponent } from './productdisplay/productadd/productadd.component';
 import { UserdisplayComponent } from './userdisplay/userdisplay.component';
+import { SignupComponent } from './userdisplay/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { UserdisplayComponent } from './userdisplay/userdisplay.component';
     PagenotfoundComponent,
     SidebarComponent,
     ProductaddComponent,
-    UserdisplayComponent
+    UserdisplayComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
