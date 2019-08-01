@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Product } from "./product";
 import { ProductdataService } from "./productdata.service";
-
+import { Router } from "@angular/router";
 @Component({
   selector: "app-productdisplay",
   templateUrl: "./productdisplay.component.html",
@@ -10,7 +10,7 @@ import { ProductdataService } from "./productdata.service";
 export class ProductdisplayComponent implements OnInit {
   arr: Product[] = [];
   name: string = "watch";
-  constructor(private _data: ProductdataService) {}
+  constructor(private _data: ProductdataService,private _router:Router) {}
 
   ngOnInit() {
     this._data.getAllProducts().subscribe(
@@ -27,6 +27,9 @@ export class ProductdisplayComponent implements OnInit {
     this._data.deleteProduct(item.pro_id).subscribe((data: any) => {
       this.arr.splice(this.arr.indexOf(item), 1);
     });
+  }
+  onProductEdit(item:Product){
+    this._router.navigate(['/editproduct',item.pro_id]);
   }
   onSideBarClick(value) {
     if (value != "") {

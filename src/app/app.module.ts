@@ -12,6 +12,7 @@ import { ProductaddComponent } from './productdisplay/productadd/productadd.comp
 import { UserdisplayComponent } from './userdisplay/userdisplay.component';
 import { SignupComponent } from './userdisplay/signup/signup.component';
 import { EdituserComponent } from './userdisplay/edituser/edituser.component';
+import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { EdituserComponent } from './userdisplay/edituser/edituser.component';
     ProductaddComponent,
     UserdisplayComponent,
     SignupComponent,
-    EdituserComponent
+    EdituserComponent,
+    EditproductComponent
   ],
   imports: [
     BrowserModule,

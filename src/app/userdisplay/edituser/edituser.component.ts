@@ -29,5 +29,10 @@ export class EdituserComponent implements OnInit {
   }
   onUserUpdate(f){
 
+    this._data.editUser(f.value).subscribe(
+      (data:any)=>{
+        alert('updated');
+      }
+    );
   }
 }

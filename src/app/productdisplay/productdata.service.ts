@@ -10,10 +10,18 @@ export class ProductdataService {
   getAllProducts() {
     return this._http.get(this.url);
   }
+  getProductById(pro_id) {
+    return this._http.get(this.url+pro_id);
+  }
   addProduct(item) {
     let body = JSON.stringify(item);
     let head = new HttpHeaders().set("Content-Type", "application/json");
     return this._http.post(this.url, body, { headers: head });
+  }
+  editProduct(pro_id,item) {
+    let body = JSON.stringify(item);
+    let head = new HttpHeaders().set("Content-Type", "application/json");
+    return this._http.put(this.url+pro_id, body, { headers: head });
   }
   deleteProduct(pro_id) {
     let head = new HttpHeaders().set("Content-Type", "application/json");
