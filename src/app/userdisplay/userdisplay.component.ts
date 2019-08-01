@@ -18,5 +18,12 @@ arr:User[]=[];
       }
     );
   }
-
+  onUserDelete(item:User){
+    this._data.deleteUser(item.user_email).subscribe(
+      (data:any)=>{
+        this.arr.splice(this.arr.indexOf(item),1);
+        alert('deleted');
+      }
+    );
+  }
 }

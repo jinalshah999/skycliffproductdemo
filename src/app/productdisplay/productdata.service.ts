@@ -15,4 +15,5 @@ export class ProductdataService {
       let head=new HttpHeaders().set('Content-Type','application/json');
     return this._http.post(this.url,body,{headers:head});
   }
+
 }

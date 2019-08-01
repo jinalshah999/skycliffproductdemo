@@ -15,4 +15,8 @@ export class UserdataService {
     let body = JSON.stringify(newuser);
     return this._http.post(this.url, body, { headers: head });
   }
+  deleteUser(user_email) {
+    let head = new HttpHeaders().set("Content-Type", "application/json");
+    return this._http.delete(this.url + user_email, { headers: head });
+  }
 }
