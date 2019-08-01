@@ -1,23 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { UserdataService } from '../userdata.service';
+import { Component, OnInit } from "@angular/core";
+import { UserdataService } from "../userdata.service";
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: "app-signup",
+  templateUrl: "./signup.component.html",
+  styleUrls: ["./signup.component.css"]
 })
 export class SignupComponent implements OnInit {
+  constructor(private _data: UserdataService) {}
 
-  constructor(private _data:UserdataService) { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  onUserSave(f) {
+    console.log(f);
+    // this._data.addUser(f.value).subscribe((data: any) => {
+    //   alert("record added");
+    // });
   }
-  onUserSave(f){
-   this._data.addUser(f.value).subscribe(
-     (data:any)=>{
-       alert('record added');
-     }
-   );
-  }
-
 }
