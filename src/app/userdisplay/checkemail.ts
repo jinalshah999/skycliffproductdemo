@@ -14,6 +14,7 @@ static  emailValidator(x:UserdataService): AsyncValidatorFn {
             if (res.length==1) {
               return { 'emailInUse': true};
             }
+            return null;
           })
         );
     };
