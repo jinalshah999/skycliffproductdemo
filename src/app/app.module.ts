@@ -14,6 +14,7 @@ import { SignupComponent } from './userdisplay/signup/signup.component';
 import { EdituserComponent } from './userdisplay/edituser/edituser.component';
 import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
 import { CustomerComponent } from './customer/customer.component';
+import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { CustomerComponent } from './customer/customer.component';
     SignupComponent,
     EdituserComponent,
     EditproductComponent,
-    CustomerComponent
+    CustomerComponent,
+    SignupReactiveDemoComponent
   ],
   imports: [
     BrowserModule,
