@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from "@angular/forms";
+import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { ProductdisplayComponent } from './productdisplay/productdisplay.component';
 import { MenuComponent } from './menu/menu.component';
@@ -13,6 +13,7 @@ import { UserdisplayComponent } from './userdisplay/userdisplay.component';
 import { SignupComponent } from './userdisplay/signup/signup.component';
 import { EdituserComponent } from './userdisplay/edituser/edituser.component';
 import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
+import { CustomerComponent } from './customer/customer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +25,15 @@ import { EditproductComponent } from './productdisplay/editproduct/editproduct.c
     UserdisplayComponent,
     SignupComponent,
     EdituserComponent,
-    EditproductComponent
+    EditproductComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
     routing,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

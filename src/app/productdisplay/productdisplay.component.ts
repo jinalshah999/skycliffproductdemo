@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
   selector: "app-productdisplay",
   templateUrl: "./productdisplay.component.html",
   styleUrls: ["./productdisplay.component.css"],
-  encapsulation:ViewEncapsulation.None
+  encapsulation:ViewEncapsulation.Emulated
 })
 export class ProductdisplayComponent implements OnInit {
   arr: Product[] = [];
