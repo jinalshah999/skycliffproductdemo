@@ -6,19 +6,40 @@ import { FormBuilder, FormControl, Validators, AbstractControl, FormGroup } from
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-customer;
+customer:FormGroup;
 invalidName:string[]=['xyz','abc'];
   constructor(private fb:FormBuilder) { }
 
   ngOnInit() {
+
     this.customer=this.fb.group({
       firstname:new FormControl(null,[Validators.required,Validators.minLength(3),this.checkFirstName.bind(this)]),
       lastname:new FormControl(null),
       passwordgroup:new FormGroup({
         password:new FormControl(null,Validators.required),
         confirm_password:new FormControl(null,Validators.required)
-      },this.matchPassword.bind(this))
+      },this.matchPassword.bind(this)),
+      email:new FormControl(),
+      mobile_no:new FormControl(),
+      notification:new FormControl('email')
     });
+
+    this.customer.get('notification').valueChanges.subscribe(
+      (x)=>{
+        let email=this.customer.get('email');
+        let mobile_no=this.customer.get('mobile_no');
+        if(x=="email"){
+          email.setValidators(Validators.required);
+          mobile_no.clearValidators();
+        }
+        else{
+            email.clearValidators();
+            mobile_no.setValidators(Validators.required);
+        }
+        email.updateValueAndValidity();
+        mobile_no.updateValueAndValidity();
+      }
+    );
   }
   checkFirstName(x:AbstractControl):{[y:string]:boolean}
   {
