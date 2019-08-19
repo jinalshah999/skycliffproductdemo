@@ -43,6 +43,15 @@
         <input type="text" formControlName="email" class="form-control">
         <label class="alert alert-danger" *ngIf="customer.get('email').hasError('required')" >Email is required</label>
       </div>
+      <div class="form-group">
+        <button class="btn btn-info" (click)="onAddHobbyClicked()" >Add hobby</button>
+        <div formArrayName="hobby" >
+            <div *ngFor="let item of customer.get('hobby').controls;let i=index" >
+                <input type="text" placeholder="Enter Hobby" [formControlName]="i" >
+                <button (click)="onDeleteHobbyClicked(i)" >Delete</button>
+            </div>
+        </div>
+      </div>
     <div class="form-group">
       <button type="submit" class="form-control  btn btn-primary">Save</button>
     </div>

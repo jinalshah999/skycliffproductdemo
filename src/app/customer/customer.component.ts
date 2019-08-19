@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators, AbstractControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, Validators, AbstractControl, FormGroup, FormArray } from "@angular/forms";
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -21,7 +21,8 @@ invalidName:string[]=['xyz','abc'];
       },this.matchPassword.bind(this)),
       email:new FormControl(),
       mobile_no:new FormControl(),
-      notification:new FormControl('email')
+      notification:new FormControl('email'),
+      hobby:new FormArray([])
     });
 
     this.customer.get('notification').valueChanges.subscribe(
@@ -61,5 +62,11 @@ return null;
   onSubmit(){
     console.log(this.customer);
   }
-
+  onAddHobbyClicked(){
+    let control=new FormControl(null,Validators.required);
+   (<FormArray> this.customer.get('hobby')).push(control);
+  }
+  onDeleteHobbyClicked(i){
+    (<FormArray> this.customer.get('hobby')).removeAt(i);
+  }
 }
