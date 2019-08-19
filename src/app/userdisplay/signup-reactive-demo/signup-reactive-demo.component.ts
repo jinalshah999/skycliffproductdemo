@@ -17,6 +17,7 @@ import { CheckEmail } from '../checkemail';
 })
 export class SignupReactiveDemoComponent implements OnInit {
   signup: FormGroup;
+  debouncer: any;
   constructor(private fb: FormBuilder, private _data: UserdataService) {}
 
   ngOnInit() {
@@ -24,7 +25,7 @@ export class SignupReactiveDemoComponent implements OnInit {
       user_email: new FormControl(null, [
         Validators.required,
         Validators.email
-      ],CheckEmail.emailcheck.bind(this._data)),
+      ],this.validateEmail.bind(this)),
       user_name: new FormControl(null, Validators.required),
       user_password_group: new FormGroup(
         {
@@ -35,6 +36,23 @@ export class SignupReactiveDemoComponent implements OnInit {
       ),
       user_mobile_no: new FormControl()
     });
+  }
+  validateEmail(control:AbstractControl):any{
+    clearTimeout(this.debouncer);
+    return new Promise(resolve => {
+      this.debouncer = setTimeout(() => {
+        this._data.getUserByEmail(control.value).subscribe(
+          (res:User[]) => {
+          if(res.length==1){
+            resolve({'emailInUse': true});
+          }
+          resolve(null);
+        });
+
+      }, 3000);
+
+    });
+
   }
   matchPassword(x: AbstractControl): { [y: string]: boolean } {
     let password = x.get("user_password").value;

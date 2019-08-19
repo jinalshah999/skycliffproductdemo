@@ -10,7 +10,7 @@
 
       <label style="color:blue" *ngIf="signup.get('user_email').status=='PENDING'">Checking...</label>
       <label style="color:green" *ngIf="signup.get('user_email').status=='VALID'">Email is Available</label>
-      <label style="color:red" *ngIf="signup.get('user_email').hasError('invalidEmail')">Email is already Taken</label>
+      <label style="color:red" *ngIf="signup.get('user_email').hasError('emailInUse')">Email is already Taken</label>
 
     </div>
     <div class="form-group">

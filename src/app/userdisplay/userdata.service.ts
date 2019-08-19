@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+
 @Injectable({
   providedIn: "root"
 })
@@ -27,4 +28,5 @@ export class UserdataService {
     let head = new HttpHeaders().set("Content-Type", "application/json");
     return this._http.delete(this.url + user_email, { headers: head });
   }
+
 }
