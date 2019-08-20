@@ -16,6 +16,7 @@ import { EditproductComponent } from './productdisplay/editproduct/editproduct.c
 import { CustomerComponent } from './customer/customer.component';
 import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 import { EdiuserreactiveComponent } from './userdisplay/ediuserreactive/ediuserreactive.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { EdiuserreactiveComponent } from './userdisplay/ediuserreactive/ediuserr
     EditproductComponent,
     CustomerComponent,
     SignupReactiveDemoComponent,
-    EdiuserreactiveComponent
+    EdiuserreactiveComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
