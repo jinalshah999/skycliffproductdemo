@@ -35,7 +35,7 @@ export class UserdataService {
   addUser(newuser) {
     //let head = new HttpHeaders().set("Content-Type", "application/json");
     let body = JSON.stringify(newuser);
-    return this._http.post(this.url, body).pipe(
+    return this._http.post(this.url, body,{headers:null}).pipe(
       catchError(this.handleError)
     );
   }
