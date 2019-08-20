@@ -10,13 +10,14 @@ import { CustomerComponent } from './customer/customer.component';
 import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 import { EdiuserreactiveComponent } from './userdisplay/ediuserreactive/ediuserreactive.component';
 import { LoginComponent } from './login/login.component';
+import { UserGuardService } from './user-guard.service';
 
 const arr : Routes=[
   {path:'',component:ProductdisplayComponent},
-  {path:'addproduct',component:ProductaddComponent},
+  {path:'addproduct',canActivate:[UserGuardService],  component:ProductaddComponent},
   {path:'editproduct/:pro_id',component:EditproductComponent},
-  {path:'customer',component:CustomerComponent},
-  {path:'signup2',component:SignupReactiveDemoComponent},
+  {path:'customer',canActivate:[UserGuardService],component:CustomerComponent},
+  {path:'signup2',canActivate:[UserGuardService],component:SignupReactiveDemoComponent},
   {path:'users',component:UserdisplayComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
