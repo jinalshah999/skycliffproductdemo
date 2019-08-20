@@ -11,6 +11,8 @@ import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/
 import { EdiuserreactiveComponent } from './userdisplay/ediuserreactive/ediuserreactive.component';
 import { LoginComponent } from './login/login.component';
 import { UserGuardService } from './user-guard.service';
+import { DemoComponent } from './demo/demo.component';
+import { Demo1Component } from './demo1/demo1.component';
 
 const arr : Routes=[
   {path:'',component:ProductdisplayComponent},
@@ -20,6 +22,8 @@ const arr : Routes=[
   {path:'signup2',canActivate:[UserGuardService],component:SignupReactiveDemoComponent},
   {path:'users',component:UserdisplayComponent},
   {path:'login',component:LoginComponent},
+  {path:'demo',component:DemoComponent},
+  {path:'demo1/:id',component:Demo1Component},
   {path:'signup',component:SignupComponent},
   {path:'edituser/:user_email',component:EdituserComponent},
   {path:'edituserreactive/:user_email',component:EdiuserreactiveComponent},
