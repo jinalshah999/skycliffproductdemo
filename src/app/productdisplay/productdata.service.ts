@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { concat } from 'rxjs';
 @Injectable({
   providedIn: "root"
 })
@@ -10,6 +11,8 @@ export class ProductdataService {
   getAllProducts() {
     return this._http.get(this.url);
   }
+
+
   getProductById(pro_id) {
     return this._http.get(this.url+pro_id);
   }
