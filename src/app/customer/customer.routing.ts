@@ -1,7 +1,10 @@
 import { Routes,RouterModule } from "@angular/router";
 import { CustomerComponent } from './customer.component';
 const arr : Routes=[
-{path:'customer',component:CustomerComponent}
+{path:'',children:[
+  {path:'',component:CustomerComponent},
+  {path:'add',component:CustomerComponent}
+]}
 ];
 
 export const customerrouting=RouterModule.forChild(arr);

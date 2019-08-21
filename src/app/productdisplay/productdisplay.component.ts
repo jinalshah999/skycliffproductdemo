@@ -33,7 +33,7 @@ export class ProductdisplayComponent implements OnInit {
     });
   }
   onProductEdit(item:Product){
-    this._router.navigate(['/editproduct',item.pro_id]);
+    this._router.navigate(['/product/editproduct',item.pro_id]);
   }
   onSideBarClick(value) {
     if (value != "") {
