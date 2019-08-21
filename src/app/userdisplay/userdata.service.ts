@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http
 import { Router } from "@angular/router";
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { User } from './user';
 
 
 @Injectable({
@@ -13,10 +14,7 @@ export class UserdataService {
   constructor(private _http: HttpClient, private _router: Router) {}
 
   getAllUsers() {
-    return this._http.get(this.url).pipe(
-      retry(3),
-      catchError(this.handleError)
-    );
+    return this._http.get(this.url);
   }
   private handleError(ex:HttpErrorResponse){
     if(ex.error instanceof ErrorEvent){
@@ -35,7 +33,7 @@ export class UserdataService {
   addUser(newuser) {
     //let head = new HttpHeaders().set("Content-Type", "application/json");
     let body = JSON.stringify(newuser);
-    return this._http.post(this.url, body,{headers:null}).pipe(
+    return this._http.post(this.url, body).pipe(
       catchError(this.handleError)
     );
   }
