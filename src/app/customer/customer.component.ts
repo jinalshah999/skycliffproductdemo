@@ -52,6 +52,12 @@ export class CustomerComponent implements OnInit {
       mobile_no.updateValueAndValidity();
     });
   }
+   getControls() {
+     return (<FormArray>this.customer.get('hobby')).controls;
+  }
+  get controls(){
+    return (this.customer.get('hobby') as FormArray).controls;
+  }
   checkFirstName(x: AbstractControl): { [y: string]: boolean } {
     let value = x.value;
     if (this.invalidName.indexOf(value) !== -1) {
