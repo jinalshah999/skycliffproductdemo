@@ -8,14 +8,14 @@ import { MenuComponent } from './menu/menu.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
 import { Interceptordemo } from './interceptordemo';
+import { HomeComponent } from './home/home.component';
 
 import { routing } from "./app.routing";
 
-
 import { UserModule } from './userdisplay/user.module';
-import { HomeComponent } from './home/home.component';
 import { MiscModule } from './misc.module';
 import { Product1Module } from './product1/product1.module';
+import { AppCustomPreloader } from './appcustomepreloader';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { Product1Module } from './product1/product1.module';
     Product1Module
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:Interceptordemo,multi:true}
+    {provide:HTTP_INTERCEPTORS,useClass:Interceptordemo,multi:true},
+    AppCustomPreloader
   ],
   bootstrap: [AppComponent]
 })
