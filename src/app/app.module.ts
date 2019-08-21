@@ -3,17 +3,11 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
-import { ProductdisplayComponent } from './productdisplay/productdisplay.component';
+
 import { MenuComponent } from './menu/menu.component';
 import { routing } from "./app.routing";
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { ProductaddComponent } from './productdisplay/productadd/productadd.component';
-import { UserdisplayComponent } from './userdisplay/userdisplay.component';
-import { SignupComponent } from './userdisplay/signup/signup.component';
-import { EdituserComponent } from './userdisplay/edituser/edituser.component';
-import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
-import { CustomerComponent } from './customer/customer.component';
+
 import { SignupReactiveDemoComponent } from './userdisplay/signup-reactive-demo/signup-reactive-demo.component';
 import { EdiuserreactiveComponent } from './userdisplay/ediuserreactive/ediuserreactive.component';
 import { LoginComponent } from './login/login.component';
@@ -23,19 +17,16 @@ import { Demo2Component } from './demo2/demo2.component';
 import { Interceptordemo } from './interceptordemo';
 import { UsersComponent } from './users/users.component';
 import { Product1Component } from './product1/product1.component';
+import { ProductModule } from './productdisplay/product.module';
+import { UserModule } from './userdisplay/user.module';
+import { HomeComponent } from './home/home.component';
+import { CustomerModule } from './customer/customer.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ProductdisplayComponent,
     MenuComponent,
     PagenotfoundComponent,
-    SidebarComponent,
-    ProductaddComponent,
-    UserdisplayComponent,
-    SignupComponent,
-    EdituserComponent,
-    EditproductComponent,
-    CustomerComponent,
+
     SignupReactiveDemoComponent,
     EdiuserreactiveComponent,
     LoginComponent,
@@ -43,14 +34,18 @@ import { Product1Component } from './product1/product1.component';
     Demo1Component,
     Demo2Component,
     UsersComponent,
-    Product1Component
+    Product1Component,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     routing,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProductModule,
+    UserModule,
+    CustomerModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:Interceptordemo,multi:true}
