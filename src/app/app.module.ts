@@ -17,6 +17,7 @@ import { MiscModule } from './misc.module';
 import { Product1Module } from './product1/product1.module';
 import { AppCustomPreloader } from './appcustomepreloader';
 
+
 @NgModule({
   declarations: [
     AppComponent,

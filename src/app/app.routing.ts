@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { UserGuardService } from './user-guard.service';
 import { AppCustomPreloader } from './appcustomepreloader';
 
+
 const arr : Routes=[
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
