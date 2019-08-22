@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http
 import { Router } from "@angular/router";
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { endpoints } from "../../environments/environment";
 import { User } from './user';
 
 
@@ -10,7 +11,7 @@ import { User } from './user';
   providedIn: "root"
 })
 export class UserdataService {
-  url: string = "https://nodejsapidemo.herokuapp.com/users/";
+  url: string = endpoints.url+ "users/";
   constructor(private _http: HttpClient, private _router: Router) {}
 
   getAllUsers() {
